@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Table</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    
+  <h2>Posts</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Tags</th>
+        <th>Status</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of post">
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <ul class="list-unstyled">
+            <li *ngFor="let tag of post.tags">{{ tag }}</li>
+          </ul>
+        </td>
+        <td>{{ post.active ? 'Active' : 'Inactive' }}</td>
+        <td>  <button (click)="deletePost(post._id)" class="btn btn-primary">Delete</button></td>
+        <td> <a href="http://localhost:4200/updatePost/{{post._id}}" class="btn btn-primary">Update</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <a routerLink="/add-data" class="btn btn-primary">Add Data</a>
+</div>
+
+</body>
+</html>

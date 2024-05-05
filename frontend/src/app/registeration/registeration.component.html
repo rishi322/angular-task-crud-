@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .registration-form {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="registration-form">
+          <h2 class="text-center mb-4">User Registration</h2>
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" [(ngModel)]="username" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" [(ngModel)]="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email"  [(ngModel)]="email"id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel " [(ngModel)]="mobile" id="mobile" name="mobile" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" class="form-control" required>
+                <option value="" >Select Gender</option>
+                <option value="male" [(ngModel)]="gender">Male</option>
+                <option value="female" [(ngModel)]="gender">Female</option>
+                <option value="other" [(ngModel)]="gender">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit"  (click)="register()" class="btn btn-primary btn-block">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
